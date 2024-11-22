@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:news/core/helper/helpers.dart';
 import 'package:news/core/widget/containerItem.dart';
 import 'package:news/featrue/bookmark/controller/cubit/book_mark_cubit.dart';
 import 'package:news/featrue/detailes/model/ArticalesModel.dart';
@@ -43,7 +44,9 @@ class _BookmarkpageState extends State<Bookmarkpage> {
                   child: Stack(
                                        
                     children: [
-                      ContainerItem(
+                      ContainerItem(onTap: (){
+                        Helpers().urlLauncherLink(articals[index].url ?? '');
+                      },
                           text: articals[index].title,
                           imageurl: articals[index].image),
                       Positioned(

@@ -7,10 +7,10 @@ import '../../featrue/home/view/widget/titleText.dart';
 class ContainerItem extends StatelessWidget {
   const ContainerItem({
     super.key,
-     required this.text, required this.imageurl,
+     required this.text, required this.imageurl, this.onTap,
   });
 
-  
+  final void Function()? onTap ;
   final String text;
   final String imageurl ;
   @override
@@ -58,15 +58,18 @@ class ContainerItem extends StatelessWidget {
                     fontSize: 14,
                     textAlign: TextAlign.end,
                   )),
-              Container(
-                  width: 200,
-                  child: TitlesTextWidget(
-                    label: '🔗 20-26-52-30-20-00-0',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    fontSize: 14,
-                    textAlign: TextAlign.end,
-                  ))
+              InkWell(
+                onTap: onTap ,
+                child: Container(
+                    width: 200,
+                    child: TitlesTextWidget(
+                      label: '🔗 20-26-52-30-20-00-0',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      fontSize: 14,
+                      textAlign: TextAlign.end,
+                    )),
+              )
             ],
           )
         ],

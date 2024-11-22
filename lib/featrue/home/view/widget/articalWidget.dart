@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news/constants.dart';
+import 'package:news/core/helper/helpers.dart';
 import 'package:news/featrue/home/model/models/ArticlesModel.dart';
 import 'package:news/featrue/home/view/widget/titleText.dart';
 
@@ -64,15 +65,20 @@ class Articalwidget extends StatelessWidget {
                           fontSize: 14,
                           textAlign: TextAlign.end,
                         )),
-                    Container(
-                        width: 200,
-                        child: TitlesTextWidget(
-                          label: '🔗 20-26-52-30-20-00-0',
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          fontSize: 14,
-                          textAlign: TextAlign.end,
-                        ))
+                    InkWell(
+                    onTap:  (){
+                        Helpers().urlLauncherLink(articlesModel.url ??"no title");
+                      },
+                      child: Container(
+                          width: 200,
+                          child: TitlesTextWidget(
+                            label: '🔗 20-26-52-30-20-00-0',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            fontSize: 14,
+                            textAlign: TextAlign.end,
+                          )),
+                    )
                   ],
                 )
               ],
