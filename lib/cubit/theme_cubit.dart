@@ -7,8 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
-  static final ThemeData lightTheme = mytheme().light;
-  static final ThemeData darkTheme = mytheme().dark;
+  static final ThemeData lightTheme = mytheme.light;
+  static final ThemeData darkTheme = mytheme.dark;
 
   ThemeCubit() : super(ThemeState(lightTheme));
 

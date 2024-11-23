@@ -12,8 +12,8 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:news/plocobserver.dart';
 
 void main() async {
-  dynamic v = await Articleswebservice().getAllArticles('sortBy', 1);
-  print(v);
+ 
+  
   await Hive.initFlutter();
 
   Bloc.observer = observer();
